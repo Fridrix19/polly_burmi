@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРОФАЙБ - Полина Бурмистрова</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="work-styles.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+    <script>
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.custom-cursor-dot');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.1;
+            cursorY += (mouseY - cursorY) * 0.1;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        document.querySelectorAll('a, button, .nav-link, .nav-btn, .slider-btn, .work-nav-btn').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.style.width = '40px'; cursor.style.height = '40px'; cursor.style.borderColor = '#4B3935'; });
+            el.addEventListener('mouseleave', () => { cursor.style.width = '20px'; cursor.style.height = '20px'; cursor.style.borderColor = '#4B3935'; });
+        });
+    </script>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="header-back-link">← Назад</a>
+        </div>
+    </header>
+
+    <div class="work-page">
+        <div class="work-page-container">
+            <h1 class="work-page-title">ПРОФАЙБ</h1>
+
+            <section class="work-gallery">
+                <h2 class="work-section-title">Галерея</h2>
+                <div class="gallery-block">
+                    <div class="gallery-images">
+                        <div class="slider-wrapper">
+                            <div class="slide active">
+                                <img src="portfolio/profibe/app-pc/404.png" alt="ПРОФАЙБ — страница 404" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <img src="portfolio/profibe/mocup/iMac.png" alt="ПРОФАЙБ — мокап на iMac" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <img src="portfolio/profibe/app-pc/вопрос.png" alt="ПРОФАЙБ — главный экран" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <img src="portfolio/profibe/app-pc/сервис.png" alt="ПРОФАЙБ — страница сервиса" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <img src="portfolio/profibe/app-mobile/мобилка 1.png" alt="ПРОФАЙБ — мобильная версия" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <img src="portfolio/profibe/app-mobile/мобилка 2.png" alt="Профессиональная экосистема" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <img src="portfolio/profibe/app-mobile/мобилка 3.png" alt="ПРОФАЙБ — мобильное приложение" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <img src="portfolio/profibe/app-mobile/мобилка 4.png" alt="ПРОФАЙБ — мобильная версия" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <img src="portfolio/profibe/app-mobile/мобилка 5.png" alt="ПРОФАЙБ — мобильная версия" class="slide-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-arrows">
+                        <button type="button" class="slider-btn prev" onclick="changeSlide(-1)" aria-label="Предыдущее">‹</button>
+                        <button type="button" class="slider-btn next" onclick="changeSlide(1)" aria-label="Следующее">›</button>
+                    </div>
+                </div>
+                <p class="slider-counter" id="slideCounter">1 / 9</p>
+                <div class="slider-dots" id="sliderDots"></div>
+            </section>
+            <div id="galleryFullscreen" class="gallery-fullscreen" aria-hidden="true">
+                <div class="gallery-fullscreen-bg" onclick="closeGalleryFullscreen()"></div>
+                <button type="button" class="gallery-fullscreen-close" onclick="closeGalleryFullscreen()" aria-label="Закрыть">×</button>
+                <div class="gallery-fullscreen-content">
+                    <img class="gallery-fullscreen-img" id="galleryFullscreenImg" src="" alt="">
+                </div>
+                <button type="button" class="gallery-fullscreen-prev" onclick="event.stopPropagation(); fullscreenPrev()" aria-label="Предыдущее">‹</button>
+                <button type="button" class="gallery-fullscreen-next" onclick="event.stopPropagation(); fullscreenNext()" aria-label="Следующее">›</button>
+                <span class="gallery-fullscreen-counter" id="galleryFullscreenCounter">1 / 9</span>
+            </div>
+
+            <section class="work-info">
+                <h2 class="work-section-title">О проекте</h2>
+                <p class="work-text">
+                    ПРОФАЙБ — платформа профориентации и самоопределения. Главная идея: «Чтобы понять, кем быть, нужно прожить хотя бы один день изнутри». Сервис помогает выбрать не только работу, но и настроение на каждый день: попробовать себя в разных ролях и понять своё место.
+                </p>
+                <p class="work-text">
+                    Пользователь вводит название профессии — система подсказывает её «вайб» и подходит ли она по интересам (проверка существующих профессий на HH.ru). Реализованы блоки: твой реальный график без фильтров, из чего состоит профессиональная экосистема, как твоя работа умножает результаты команды, личный рост с первого сданного проекта, сообщения от коллег, конкурентная среда и возможности, профессия в деталях и ощущениях, плейлист для продуктивного начала дня. Мобильная версия с блоком «Заботливый коллега» — подсказки о перерывах и смене контекста.
+                </p>
+
+                <h2 class="work-section-title">Задачи</h2>
+                <div class="work-tasks">
+                    <span class="work-task-pill">Создать варфрейм</span>
+                    <span class="work-task-pill">Создать прототип</span>
+                    <span class="work-task-pill">Лендинг и главный экран</span>
+                    <span class="work-task-pill">Адаптация под мобильные</span>
+                    <span class="work-task-pill">Интеграция с HH.ru</span>
+                    <span class="work-task-pill">Визуальный стиль и иллюстрации</span>
+                    <span class="work-task-pill">Страницы сервиса и 404</span>
+                    <span class="work-task-pill">Довести до продукта</span>
+                </div>
+
+                <h2 class="work-section-title">Решение</h2>
+                <p class="work-text">
+                    Разработан лендинг с секциями: герой с слоганом и CTA «Попробовать себя», ввод профессии и подсказка о проверке на HH.ru, реальный график без фильтров, профессиональная экосистема (инструменты и плашки), результаты команды, личный рост, сообщения коллег, конкурентная среда, профессия в деталях и плейлист. Мобильная версия с акцентом на ввод профессии и карточку «Заботливый коллега». Единый визуальный стиль: фиолетовый, оранжевый, лайм-зелёный, абстрактные иллюстрации и скруглённые блоки.
+                </p>
+
+                <nav class="work-project-nav">
+                    <a href="work-1.html" class="work-nav-btn">← Предыдущий проект</a>
+                    <a href="work-3.html" class="work-nav-btn">Следующий проект →</a>
+                </nav>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        var currentSlideIndex = 0;
+        var slides = document.querySelectorAll('.slide');
+        var totalSlides = slides.length;
+        var dotsContainer = document.getElementById('sliderDots');
+        var counterEl = document.getElementById('slideCounter');
+        for (var i = 0; i < totalSlides; i++) {
+            var dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Слайд ' + (i + 1));
+            dot.onclick = (function(j) { return function() { currentSlide(j); }; })(i);
+            dotsContainer.appendChild(dot);
+        }
+        var dots = document.querySelectorAll('.dot');
+        function updateCounter() {
+            if (counterEl) counterEl.textContent = (currentSlideIndex + 1) + ' / ' + totalSlides;
+        }
+        function showSlide(index) {
+            currentSlideIndex = index;
+            if (currentSlideIndex >= totalSlides) currentSlideIndex = 0;
+            if (currentSlideIndex < 0) currentSlideIndex = totalSlides - 1;
+            slides.forEach(function(s, i) { s.classList.toggle('active', i === currentSlideIndex); });
+            dots.forEach(function(d, i) { d.classList.toggle('active', i === currentSlideIndex); });
+            updateCounter();
+        }
+        function changeSlide(direction) { showSlide(currentSlideIndex + direction); }
+        function currentSlide(index) { showSlide(index); }
+        function updateFullscreen() {
+            var img = document.getElementById('galleryFullscreenImg');
+            var counter = document.getElementById('galleryFullscreenCounter');
+            if (img && slides[currentSlideIndex]) {
+                var slideImg = slides[currentSlideIndex].querySelector('.slide-img');
+                if (slideImg) { img.src = slideImg.src; img.alt = slideImg.alt || ''; }
+            }
+            if (counter) counter.textContent = (currentSlideIndex + 1) + ' / ' + totalSlides;
+        }
+        function openGalleryFullscreen() {
+            var fs = document.getElementById('galleryFullscreen');
+            if (fs) {
+                fs.classList.add('is-open');
+                fs.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                updateFullscreen();
+            }
+        }
+        function closeGalleryFullscreen() {
+            var fs = document.getElementById('galleryFullscreen');
+            if (fs) {
+                fs.classList.remove('is-open');
+                fs.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        }
+        function fullscreenPrev() { changeSlide(-1); updateFullscreen(); }
+        function fullscreenNext() { changeSlide(1); updateFullscreen(); }
+        document.querySelector('.gallery-images').addEventListener('click', openGalleryFullscreen);
+        updateCounter();
+    </script>
+</body>
+</html>
