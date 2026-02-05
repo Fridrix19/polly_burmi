@@ -439,6 +439,30 @@ section {
     display: block;
 }
 
+/* ПК: цельные слова без переносов */
+.cover-title-desktop {
+    display: block;
+}
+.cover-title-mobile {
+    display: none;
+}
+
+/* На ПК акцентные размеры не нужны (мобильный блок скрыт) */
+.cover-title .title-accent,
+.cover-title .title-accent-mid,
+.cover-title .title-small {
+    font-size: 1em;
+    display: inline-block;
+}
+
+.name-line {
+    display: inline;
+}
+
+.name-br-mobile {
+    display: none;
+}
+
 .name-overlay {
     position: absolute;
     top: 53%;
@@ -462,7 +486,7 @@ section {
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 36px;
     align-items: start;
     flex: 1;
     margin: 40px 0;
@@ -980,8 +1004,8 @@ section {
 .skill-tag {
     display: inline-block;
     padding: 8px 14px;
-    background: rgba(240, 231, 213, 0.3);
-    border: 2px solid rgba(240, 231, 213, 0.6);
+    background: #F0E7D5;
+    border: 2px solid #F0E7D5;
     border-radius: 8px;
     font-size: 12px;
     font-weight: 700;
@@ -990,9 +1014,9 @@ section {
 }
 
 .skill-tag:hover {
-    background: #F0E7D5;
+    background: #ebe0cc;
     color: #4B3935;
-    border-color: #F0E7D5;
+    border-color: #ebe0cc;
     transform: translate(-2px, -2px);
     box-shadow: 3px 3px 0 rgba(75, 57, 53, 0.2);
 }
@@ -1243,13 +1267,39 @@ section {
     }
     
     .cover-title {
-        font-size: 56px;
+        font-size: 64px;
         letter-spacing: -2px;
-        line-height: 0.9;
+        line-height: 0.95;
+    }
+    
+    /* Мобилка: показываем вариант с переносами (Креа тив ное / порт фолио) */
+    .cover-title-desktop {
+        display: none;
+    }
+    .cover-title-mobile {
+        display: block;
+    }
+    
+    /* Креативное портфолио — разный размер частей только на мобилке */
+    .cover-title .title-accent {
+        font-size: 1.55em;
+    }
+    .cover-title .title-accent-mid {
+        font-size: 1.12em;
+    }
+    .cover-title .title-small {
+        font-size: 0.88em;
+    }
+    
+    .name-br-mobile {
+        display: block;
     }
     
     .name-overlay {
-        font-size: clamp(28px, 8vw, 52px);
+        font-size: clamp(38px, 10vw, 66px);
+        font-weight: 700;
+        white-space: normal;
+        text-align: center;
     }
     
     .cover-role {
@@ -1269,13 +1319,16 @@ section {
     .navigation-buttons {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
         padding: 0 16px;
     }
     
     .nav-btn {
-        padding: 14px 24px;
-        font-size: 16px;
+        padding: 10px 16px;
+        font-size: 14px;
+        border-radius: 12px;
+        border-width: 2px;
+        box-shadow: 4px 4px 0 #4B3935;
     }
     
     .skills-section .pill {
@@ -1379,12 +1432,13 @@ section {
     }
     
     .cover-title {
-        font-size: 42px;
+        font-size: 48px;
         letter-spacing: -1px;
     }
     
     .name-overlay {
-        font-size: clamp(22px, 7vw, 44px);
+        font-size: clamp(32px, 9vw, 56px);
+        font-weight: 700;
     }
     
     .cover-role {
@@ -1402,13 +1456,16 @@ section {
     }
     
     .navigation-buttons {
-        gap: 8px;
+        gap: 6px;
         padding: 0 16px;
     }
     
     .nav-btn {
-        padding: 12px 20px;
-        font-size: 15px;
+        padding: 8px 14px;
+        font-size: 13px;
+        border-radius: 10px;
+        border-width: 2px;
+        box-shadow: 3px 3px 0 #4B3935;
     }
     
     .footer-container {

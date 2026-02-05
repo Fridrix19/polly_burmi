@@ -411,6 +411,34 @@ body:has(.work-page) .header-container {
     margin-top: 4px;
 }
 
+.work-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.work-link-pill {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #4B3935;
+    background: rgba(75, 57, 53, 0.12);
+    border: 3px solid #4B3935;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 #4B3935;
+    transition: all 0.2s ease;
+}
+
+.work-link-pill:hover {
+    background: #4B3935;
+    color: #F0E7D5;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #4B3935;
+}
+
 .work-text {
     font-size: 18px;
     line-height: 1.8;
@@ -482,6 +510,37 @@ body:has(.work-page) .header-container {
 }
 
 /* Блок просмотра PDF — «ПОЛНЫЙ ПРОЕКТ» */
+/* Блок с прокручиваемым экраном (как сайт) — страница «Сервис» в ПРОФАЙБ */
+.work-screen-block {
+    width: 100%;
+    max-width: 1920px;
+    margin-top: 24px;
+    margin-bottom: 48px;
+    border: 4px solid #4B3935;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 #4B3935;
+    background: #E5DDD0;
+}
+
+.work-screen-viewport {
+    width: 100%;
+    height: 70vh;
+    max-height: 1080px;
+    min-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+}
+
+.work-screen-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    vertical-align: top;
+}
+
 .work-pdf-block {
     width: 100%;
     margin-top: 24px;
