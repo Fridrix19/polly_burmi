@@ -471,7 +471,7 @@ section {
 
 .name-overlay {
     position: absolute;
-    top: 53%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* Позиция сразу задана, чтобы при загрузке не мелькало слева сверху */
@@ -1119,9 +1119,12 @@ section {
     }
     
     .cover-section {
-        padding: 24px 16px 120px;
-        min-height: 100vh;
+        padding: 40px 16px 100px;
+        min-height: 115vh;
+        min-height: 115dvh;
         justify-content: center;
+        align-items: center;
+        overflow: visible;
     }
     
     /* Скрываем хедер только на главной; на страницах работ (есть .work-page) кнопка «Назад» остаётся */
@@ -1321,10 +1324,17 @@ section {
         font-size: 14px;
         letter-spacing: 1.5px;
         margin-bottom: 16px;
+        text-align: center;
     }
     
     .cover-content {
         gap: 18px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cover-title {
+        text-align: center;
     }
     
     .section-title {
@@ -1340,8 +1350,12 @@ section {
     .navigation-buttons {
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         gap: 8px;
         padding: 0 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     .nav-btn {
@@ -1411,7 +1425,8 @@ section {
     }
     
     .cover-section {
-        padding: 20px 16px 100px;
+        padding: 36px 16px 100px;
+        overflow: visible;
     }
     
     body:not(:has(.work-page)) .main-header {
@@ -1462,6 +1477,12 @@ section {
     
     .cover-content {
         gap: 14px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cover-title {
+        text-align: center;
     }
     
     .name-overlay {
@@ -1471,12 +1492,14 @@ section {
         font-size: clamp(32px, 9vw, 56px);
         font-weight: 500;
         line-height: 1.1;
+        text-align: center;
     }
     
     .cover-role {
         font-size: 12px;
         letter-spacing: 1px;
         margin-bottom: 12px;
+        text-align: center;
     }
     
     .section-title {
