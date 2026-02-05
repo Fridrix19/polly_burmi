@@ -463,6 +463,8 @@ section {
 
 .name-line {
     display: inline;
+    padding: 0.08em 0;
+    line-height: 1.35;
 }
 
 .name-br-mobile {
@@ -482,6 +484,8 @@ section {
     z-index: 2;
     white-space: nowrap;
     filter: drop-shadow(3px 3px 0 #4B3935);
+    padding: 0.55em 0.7em;
+    box-sizing: border-box;
 }
 
 /* Секция 2: О себе */
@@ -1318,6 +1322,7 @@ section {
         white-space: normal;
         text-align: center;
         line-height: 1.15;
+        padding: 0.55em 0.7em;
     }
     
     .cover-role {
@@ -1493,6 +1498,7 @@ section {
         font-weight: 500;
         line-height: 1.1;
         text-align: center;
+        padding: 0.5em 0.65em;
     }
     
     .cover-role {
